@@ -26,7 +26,7 @@ export default function Note(props){
         // To ovverride the click effect inside the note... 
         // i.e. to stop opening modal on clicking the delete icon which is inside the note
         e.stopPropagation()
-        fetch(`notes/${_id}`,
+        fetch(`http://localhost:5000/notes/${_id}`,
             {
                 method: "DELETE",
                 headers: {
@@ -48,7 +48,7 @@ export default function Note(props){
     // Updates a note.. while editing a note inside a modal
     function updateNote(_id,title,description) {
         setIsSaving(true)
-        fetch(`notes/update/${_id}`,
+        fetch(`http://localhost:5000/notes/update/${_id}`,
             {
                 method: "PUT",
                 headers: {
