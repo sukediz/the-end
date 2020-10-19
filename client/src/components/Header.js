@@ -19,16 +19,16 @@ export default function(props){
             </div>
             <div className='Header-Flex'>
                 <img src={process.env.PUBLIC_URL + '/favicon.ico'} alt='Notes-Logo'/>
-                <div className='Heading'>Notes</div>
+                <div className='Heading'>Host-it notes</div>
             </div>
         </div>
     ) :
     (
         <div className="Header">
-            <div className='SignIn-Button' onClick={()=>window.location.href="https://enigmatic-eyrie-93344.herokuapp.com/auth/google"}>Sign In</div>
+            <div className='SignIn-Button' onClick={()=>window.location.href="/auth/google"}>Sign In</div>
             <div className='Header-Flex'>
                 <img src={process.env.PUBLIC_URL + '/favicon.ico'} alt='Notes-Logo'/>
-                <div className='Heading'>Notes</div>
+                <div className='Heading'>Host-it notes</div>
             </div>
         </div>
     )

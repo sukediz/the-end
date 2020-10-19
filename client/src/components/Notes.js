@@ -11,7 +11,7 @@ export default function Notes(props){
     //  It will contain all the notes of the user
     // 'url' is based on the unique googleId of the signed in user
     const [notes,setNotes] = useState([]);
-    var url = 'http://localhost:5000/notes/'+props.user.googleId;
+    var url = '/notes/'+props.user.googleId;
     
     // 'fetchingNotes' is the loading state while fetching the notes
     const [fetchingNotes, setFetchingNotes] = useState(true)
