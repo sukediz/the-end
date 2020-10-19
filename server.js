@@ -49,7 +49,7 @@ app.use(express.json());
 
 app.use(cors(
   {
-    origin: "https://enigmatic-eyrie-93344.herokuapp.com/", // allow to server to accept request from different origin
+    origin: "http://localhost:3000", // allow to server to accept request from different origin
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true // allow session cookie from browser to pass through
   }
