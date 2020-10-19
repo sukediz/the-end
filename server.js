@@ -49,7 +49,7 @@ app.use(express.json());
 
 app.use(cors(
   {
-    origin: "http://localhost:3000", // allow to server to accept request from different origin
+    origin: "/", // allow to server to accept request from different origin
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true // allow session cookie from browser to pass through
   }
@@ -81,18 +81,6 @@ app.get("/", authCheck, (req, res) => {
     cookies: req.cookies
   });
 });
-
-if (process.env.NODE_ENV = 'production') {
-  server.use(express.static('client/build'));
-  server.use('*', express.static('client/build'));
-  server.get('/*', function(req, res) {
-      res.sendFile(path.join(__dirname, '/client/build/index.html'), function(err) {
-        if (err) {
-          res.status(500).send(err)
-        }
-      })
-    })
-}
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
