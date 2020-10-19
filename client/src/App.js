@@ -16,7 +16,7 @@ function App() {
 
   useEffect(()=>{
     setIsLoading(true)
-    fetch("http://localhost:5000/auth/login/success",
+    fetch("/auth/login/success",
       {
         method: "GET",
         credentials: "include",
