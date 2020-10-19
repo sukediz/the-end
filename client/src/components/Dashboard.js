@@ -3,6 +3,7 @@ import './css/Dashboard.css';
 import Notes from  './Notes'
 import Textbox from "./Textbox";
 
+
 export default function Dashboard(props){
 
     // When loading, show loading svg
@@ -22,7 +23,7 @@ export default function Dashboard(props){
                 <div>The simplest way</div>
                 <div>to keep notes ...</div>
             </div>
-            <div className="Google-Btn" onClick={()=>window.location.href='http://localhost:5000/auth/google'}>
+            <div className="Google-Btn" onClick={()=>window.location.href='auth/google'}>
                 <img className="Google-Icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt='google'/>
                 <div className="Btn-Text">Sign in with Google</div>
             </div>
