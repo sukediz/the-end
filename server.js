@@ -82,6 +82,18 @@ app.get("/", authCheck, (req, res) => {
   });
 });
 
+if (process.env.NODE_ENV = 'production') {
+  server.use(express.static('client/build'));
+  server.use('*', express.static('client/build'));
+  server.get('/*', function(req, res) {
+      res.sendFile(path.join(__dirname, '/client/build/index.html'), function(err) {
+        if (err) {
+          res.status(500).send(err)
+        }
+      })
+    })
+}
+
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
     console.log(`NODE_ENV = ${process.env.NODE_ENV}`);
