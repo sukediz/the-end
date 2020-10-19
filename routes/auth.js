@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const passport = require("passport");
-const CLIENT_HOME_PAGE_URL = "http://localhost:3000";
+const CLIENT_HOME_PAGE_URL = "https://enigmatic-eyrie-93344.herokuapp.com";
 
 // when login is successful, retrieve user info
 router.get("/login/success", (req, res) => {
@@ -43,7 +43,7 @@ router.get('/google',
 router.get( '/google/callback', 
     passport.authenticate( 'google', { 
         successRedirect: CLIENT_HOME_PAGE_URL,
-        failureRedirect: '/auth/login/failed',
+        failureRedirect: 'https://enigmatic-eyrie-93344.herokuapp.com/auth/google/callback',
     })
 );
 
