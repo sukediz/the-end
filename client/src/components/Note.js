@@ -48,7 +48,7 @@ export default function Note(props){
     // Updates a note.. while editing a note inside a modal
     function updateNote(_id,title,description) {
         setIsSaving(true)
-        fetch(`/notes/update/${_id}`,
+        fetch(`http://localhost:5000/notes/update/${_id}`,
             {
                 method: "PUT",
                 headers: {
