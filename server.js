@@ -47,7 +47,13 @@ app.use(passport.session());
 
 app.use(express.json());
 
-app.use(cors());
+app.use(cors(
+  {
+    origin: "http://localhost:3000", // allow to server to accept request from different origin
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true // allow session cookie from browser to pass through
+  }
+));
 
 app.use('/notes', notesRouter);
 app.use('/users', usersRouter);
